@@ -101,10 +101,9 @@ void moveBall()
 
 int searchWall()
 {
-	//0 - íåò êàñàíèÿ, 1 - îòñêîê îò ñòåíû, 2 - îòñêîê îò ïîëà\ïîòîëêà, 3 - ðàçâîðîò îò äâóõ, 4 - ðàçâîðîò îò îäíîé
 	int flag = 0;
 
-	if ((left_rigth > 0) && (up_down < 0)) //âïðàâî è ââåðõ
+	if ((left_rigth > 0) && (up_down < 0))
 	{
 		if (mas[ball_y][ball_x + 1] != ' ') flag = 1;
 		if (mas[ball_y - 1][ball_x] != ' ') flag = 2;
@@ -112,7 +111,7 @@ int searchWall()
 		if ((mas[ball_y - 1][ball_x + 1] != ' ') && (flag == 0)) flag = 4;
 	}
 
-	if ((left_rigth < 0) && (up_down < 0)) //âëåâî è ââåðõ
+	if ((left_rigth < 0) && (up_down < 0))
 	{
 		if (mas[ball_y][ball_x - 1] != ' ') flag = 1;
 		if (mas[ball_y - 1][ball_x] != ' ') flag = 2;
@@ -121,7 +120,7 @@ int searchWall()
 	}
 
 
-	if ((left_rigth > 0) && (up_down > 0)) //âïðàâî è âíèç
+	if ((left_rigth > 0) && (up_down > 0))
 	{
 		if (mas[ball_y][ball_x + 1] != ' ') flag = 1;
 		if (mas[ball_y + 1][ball_x] != ' ') flag = 2;
@@ -129,7 +128,7 @@ int searchWall()
 		if ((mas[ball_y + 1][ball_x + 1] != ' ') && (flag == 0)) flag = 4;
 	}
 
-	if ((left_rigth < 0) && (up_down > 0)) //âëåâî è âíèç
+	if ((left_rigth < 0) && (up_down > 0))
 	{
 		if (mas[ball_y][ball_x - 1] != ' ') flag = 1;
 		if (mas[ball_y + 1][ball_x] != ' ') flag = 2;
@@ -137,12 +136,12 @@ int searchWall()
 		if ((mas[ball_y + 1][ball_x - 1] != ' ') && (flag == 0)) flag = 4;
 	}
 
-	if ((left_rigth == 0) && (up_down < 0)) // ââåðõ
+	if ((left_rigth == 0) && (up_down < 0))
 	{
 		if (mas[ball_y - 1][ball_x] != ' ') flag = 2;
 	}
 
-	if ((left_rigth == 0) && (up_down > 0)) // âíèç
+	if ((left_rigth == 0) && (up_down > 0))
 	{
 		if (mas[ball_y + 1][ball_x] != ' ') flag = 2;
 	}
@@ -195,40 +194,40 @@ void breakBrick()
 {
 	if ((alpha == abs(left_rigth)) && (wall > 0))
 	{
-		if ((left_rigth > 0) && (up_down < 0)) //âïðàâî è ââåðõ
+		if ((left_rigth > 0) && (up_down < 0))
 		{
 			if (mas[ball_y][ball_x + 1] == '=') mas[ball_y][ball_x + 1] = ' ';
 			if (mas[ball_y - 1][ball_x] == '=') mas[ball_y - 1][ball_x] = ' ';
 			if ((mas[ball_y - 1][ball_x + 1] == '=') && wall == 4) mas[ball_y - 1][ball_x + 1] = ' ';
 		}
 
-		if ((left_rigth < 0) && (up_down < 0)) //âëåâî è ââåðõ
+		if ((left_rigth < 0) && (up_down < 0))
 		{
 			if (mas[ball_y][ball_x - 1] == '=') mas[ball_y][ball_x - 1] = ' ';
 			if (mas[ball_y - 1][ball_x] == '=') mas[ball_y - 1][ball_x] = ' ';
 			if ((mas[ball_y - 1][ball_x - 1] == '=') && wall == 4) mas[ball_y - 1][ball_x - 1] = ' ';
 		}
 
-		if ((left_rigth > 0) && (up_down > 0)) //âïðàâî è âíèç
+		if ((left_rigth > 0) && (up_down > 0))
 		{
 			if (mas[ball_y][ball_x + 1] == '=') mas[ball_y][ball_x + 1] = ' ';
 			if (mas[ball_y + 1][ball_x] == '=') mas[ball_y + 1][ball_x] = ' ';
 			if ((mas[ball_y + 1][ball_x + 1] == '=') && wall == 4) mas[ball_y + 1][ball_x + 1] = ' ';
 		}
 
-		if ((left_rigth < 0) && (up_down > 0)) //âëåâî è âíèç
+		if ((left_rigth < 0) && (up_down > 0))
 		{
 			if (mas[ball_y][ball_x - 1] == '=') mas[ball_y][ball_x - 1] = ' ';
 			if (mas[ball_y + 1][ball_x] == '=') mas[ball_y + 1][ball_x] = ' ';
 			if ((mas[ball_y + 1][ball_x - 1] == '=') && wall == 4) mas[ball_y + 1][ball_x - 1] = ' ';;
 		}
 
-		if ((left_rigth == 0) && (up_down < 0)) // ââåðõ
+		if ((left_rigth == 0) && (up_down < 0))
 		{
 			if (mas[ball_y - 1][ball_x] == '=') mas[ball_y - 1][ball_x] = ' ';
 		}
 
-		if ((left_rigth == 0) && (up_down > 0)) // âíèç
+		if ((left_rigth == 0) && (up_down > 0))
 		{
 			if (mas[ball_y + 1][ball_x] == '=') mas[ball_y + 1][ball_x] = ' ';
 		}
