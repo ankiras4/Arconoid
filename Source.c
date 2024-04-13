@@ -101,10 +101,10 @@ void moveBall()
 
 int searchWall()
 {
-	//0 - нет касания, 1 - отскок от стены, 2 - отскок от пола\потолка, 3 - разворот от двух, 4 - разворот от одной
+	//0 - Г­ГҐГІ ГЄГ Г±Г Г­ГЁГї, 1 - Г®ГІГ±ГЄГ®ГЄ Г®ГІ Г±ГІГҐГ­Г», 2 - Г®ГІГ±ГЄГ®ГЄ Г®ГІ ГЇГ®Г«Г \ГЇГ®ГІГ®Г«ГЄГ , 3 - Г°Г Г§ГўГ®Г°Г®ГІ Г®ГІ Г¤ГўГіГµ, 4 - Г°Г Г§ГўГ®Г°Г®ГІ Г®ГІ Г®Г¤Г­Г®Г©
 	int flag = 0;
 
-	if ((left_rigth > 0) && (up_down < 0)) //вправо и вверх
+	if ((left_rigth > 0) && (up_down < 0)) //ГўГЇГ°Г ГўГ® ГЁ ГўГўГҐГ°Гµ
 	{
 		if (mas[ball_y][ball_x + 1] != ' ') flag = 1;
 		if (mas[ball_y - 1][ball_x] != ' ') flag = 2;
@@ -112,7 +112,7 @@ int searchWall()
 		if ((mas[ball_y - 1][ball_x + 1] != ' ') && (flag == 0)) flag = 4;
 	}
 
-	if ((left_rigth < 0) && (up_down < 0)) //влево и вверх
+	if ((left_rigth < 0) && (up_down < 0)) //ГўГ«ГҐГўГ® ГЁ ГўГўГҐГ°Гµ
 	{
 		if (mas[ball_y][ball_x - 1] != ' ') flag = 1;
 		if (mas[ball_y - 1][ball_x] != ' ') flag = 2;
@@ -121,7 +121,7 @@ int searchWall()
 	}
 
 
-	if ((left_rigth > 0) && (up_down > 0)) //вправо и вниз
+	if ((left_rigth > 0) && (up_down > 0)) //ГўГЇГ°Г ГўГ® ГЁ ГўГ­ГЁГ§
 	{
 		if (mas[ball_y][ball_x + 1] != ' ') flag = 1;
 		if (mas[ball_y + 1][ball_x] != ' ') flag = 2;
@@ -129,7 +129,7 @@ int searchWall()
 		if ((mas[ball_y + 1][ball_x + 1] != ' ') && (flag == 0)) flag = 4;
 	}
 
-	if ((left_rigth < 0) && (up_down > 0)) //влево и вниз
+	if ((left_rigth < 0) && (up_down > 0)) //ГўГ«ГҐГўГ® ГЁ ГўГ­ГЁГ§
 	{
 		if (mas[ball_y][ball_x - 1] != ' ') flag = 1;
 		if (mas[ball_y + 1][ball_x] != ' ') flag = 2;
@@ -137,12 +137,12 @@ int searchWall()
 		if ((mas[ball_y + 1][ball_x - 1] != ' ') && (flag == 0)) flag = 4;
 	}
 
-	if ((left_rigth == 0) && (up_down < 0)) // вверх
+	if ((left_rigth == 0) && (up_down < 0)) // ГўГўГҐГ°Гµ
 	{
 		if (mas[ball_y - 1][ball_x] != ' ') flag = 2;
 	}
 
-	if ((left_rigth == 0) && (up_down > 0)) // вниз
+	if ((left_rigth == 0) && (up_down > 0)) // ГўГ­ГЁГ§
 	{
 		if (mas[ball_y + 1][ball_x] != ' ') flag = 2;
 	}
@@ -195,40 +195,40 @@ void breakBrick()
 {
 	if ((alpha == abs(left_rigth)) && (wall > 0))
 	{
-		if ((left_rigth > 0) && (up_down < 0)) //вправо и вверх
+		if ((left_rigth > 0) && (up_down < 0)) //ГўГЇГ°Г ГўГ® ГЁ ГўГўГҐГ°Гµ
 		{
 			if (mas[ball_y][ball_x + 1] == '=') mas[ball_y][ball_x + 1] = ' ';
 			if (mas[ball_y - 1][ball_x] == '=') mas[ball_y - 1][ball_x] = ' ';
 			if ((mas[ball_y - 1][ball_x + 1] == '=') && wall == 4) mas[ball_y - 1][ball_x + 1] = ' ';
 		}
 
-		if ((left_rigth < 0) && (up_down < 0)) //влево и вверх
+		if ((left_rigth < 0) && (up_down < 0)) //ГўГ«ГҐГўГ® ГЁ ГўГўГҐГ°Гµ
 		{
 			if (mas[ball_y][ball_x - 1] == '=') mas[ball_y][ball_x - 1] = ' ';
 			if (mas[ball_y - 1][ball_x] == '=') mas[ball_y - 1][ball_x] = ' ';
 			if ((mas[ball_y - 1][ball_x - 1] == '=') && wall == 4) mas[ball_y - 1][ball_x - 1] = ' ';
 		}
 
-		if ((left_rigth > 0) && (up_down > 0)) //вправо и вниз
+		if ((left_rigth > 0) && (up_down > 0)) //ГўГЇГ°Г ГўГ® ГЁ ГўГ­ГЁГ§
 		{
 			if (mas[ball_y][ball_x + 1] == '=') mas[ball_y][ball_x + 1] = ' ';
 			if (mas[ball_y + 1][ball_x] == '=') mas[ball_y + 1][ball_x] = ' ';
 			if ((mas[ball_y + 1][ball_x + 1] == '=') && wall == 4) mas[ball_y + 1][ball_x + 1] = ' ';
 		}
 
-		if ((left_rigth < 0) && (up_down > 0)) //влево и вниз
+		if ((left_rigth < 0) && (up_down > 0)) //ГўГ«ГҐГўГ® ГЁ ГўГ­ГЁГ§
 		{
 			if (mas[ball_y][ball_x - 1] == '=') mas[ball_y][ball_x - 1] = ' ';
 			if (mas[ball_y + 1][ball_x] == '=') mas[ball_y + 1][ball_x] = ' ';
 			if ((mas[ball_y + 1][ball_x - 1] == '=') && wall == 4) mas[ball_y + 1][ball_x - 1] = ' ';;
 		}
 
-		if ((left_rigth == 0) && (up_down < 0)) // вверх
+		if ((left_rigth == 0) && (up_down < 0)) // ГўГўГҐГ°Гµ
 		{
 			if (mas[ball_y - 1][ball_x] == '=') mas[ball_y - 1][ball_x] = ' ';
 		}
 
-		if ((left_rigth == 0) && (up_down > 0)) // вниз
+		if ((left_rigth == 0) && (up_down > 0)) // ГўГ­ГЁГ§
 		{
 			if (mas[ball_y + 1][ball_x] == '=') mas[ball_y + 1][ball_x] = ' ';
 		}
